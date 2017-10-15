@@ -383,6 +383,10 @@ GEM
       slim (~> 3.0)
       sysexits (~> 1.1)
     slop (3.6.0)
+    smart_listing (1.0.0)
+      coffee-rails
+      kaminari (>= 0.15.1)
+      rails (>= 3.2)
     spring (2.0.1)
       activesupport (>= 4.2)
     spring-commands-rspec (1.0.4)
@@ -499,6 +503,7 @@ DEPENDENCIES
   slim
   slim-rails
   slim_lint
+  smart_listing
   spring
   spring-commands-rspec
   spring-watcher-listen

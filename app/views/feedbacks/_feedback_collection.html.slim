@@ -1,0 +1,14 @@
+table
+  thead
+    tr
+      th Name
+      th Email
+      th Text
+  tbody
+  - smart_listing.collection.each do |f|
+    tr
+      td = f.name
+      td = f.email
+      td = f.text
+
+= smart_listing.paginate
