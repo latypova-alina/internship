@@ -1,0 +1,5 @@
+= simple_form_for feedback do |f|
+  = f.input :name, input_html: {value: feedback.feedback_sender_name}
+  = f.input :email, input_html: {value: feedback.feedback_sender_email}
+  = f.text_field :text
+  = f.button :submit

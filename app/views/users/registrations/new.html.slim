@@ -16,8 +16,8 @@
         | account
 
       .form-inputs
-        = f.input :full_name, required: true, autofocus: true
-        = f.input :email, required: true
+        = f.input :full_name, input_html: {value: "John Smith"} , required: true, autofocus: true
+        = f.input :email, input_html: {value: "john@example.com"}, required: true
         = f.input :password, required: true
         = f.input :password_confirmation, required: true
 
