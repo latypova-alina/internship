@@ -1,7 +1,6 @@
 require "rails_helper"
 
 shared_context "feedback is added" do
-
   let(:feedback) { create :feedback }
 
   def add_feedback
@@ -17,7 +16,7 @@ shared_context "feedback is added" do
     expect(page).to have_content "Add Feedback"
     add_feedback
     expect(page).to have_content "Feedback was successfully sent!"
-    open_email('admin@example.com')
+    open_email("admin@example.com")
     expect(current_email).to have_subject("Feedback email")
   end
 end

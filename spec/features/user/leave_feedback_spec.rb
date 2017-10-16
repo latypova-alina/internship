@@ -1,7 +1,6 @@
 require "rails_helper"
 
 feature "Registered user can leave a feedback" do
-
   include_context "current user signed in"
   include_context "feedback is added"
 
