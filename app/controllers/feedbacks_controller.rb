@@ -18,6 +18,7 @@ class FeedbacksController < ApplicationController
   end
 
   def index
+    authorize feedback
     @search = Feedback.ransack(params[:q])
     @searched_feedbacks = @search.result
     smart_listing_create(:feedbacks, @searched_feedbacks,
