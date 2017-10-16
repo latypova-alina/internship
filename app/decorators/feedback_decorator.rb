@@ -8,5 +8,4 @@ class FeedbackDecorator < ApplicationDecorator
   def feedback_sender_email
     h.current_user.email if h.user_signed_in?
   end
-
 end

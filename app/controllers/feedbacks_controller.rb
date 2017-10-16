@@ -1,5 +1,4 @@
 class FeedbacksController < ApplicationController
-
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
 
@@ -24,5 +23,4 @@ class FeedbacksController < ApplicationController
     smart_listing_create(:feedbacks, @searched_feedbacks,
       partial: "feedbacks/feedback_collection", default_sort: { created_at: "desc" })
   end
-
 end
