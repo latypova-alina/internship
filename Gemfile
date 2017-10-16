@@ -42,9 +42,11 @@ gem "puma"
 gem "pundit"
 gem "rack-canonical-host"
 gem "rack-mini-profiler", require: false, git: "https://github.com/MiniProfiler/rack-mini-profiler.git"
+gem "ransack", github: "activerecord-hackery/ransack"
 gem "responders"
 gem "rollbar"
 gem "seedbank"
+gem "smart_listing"
 gem "stackprof"
 
 group :staging, :production do
