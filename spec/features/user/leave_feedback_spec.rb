@@ -11,4 +11,8 @@ feature "Registered user can leave a feedback" do
     expect(find_field("Email").value).to eq current_user.email
   end
 
+  scenario "not-admin tries to see feedbacks list" do
+    visit feedbacks_path
+    expect(page).to have_content "You are not admin! >___>"
+  end
 end
