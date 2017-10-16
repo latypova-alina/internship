@@ -1,4 +1,5 @@
 You can log in as admin through credentials: admin@example.com 123123
+Heroku app: https://fs-internship.herokuapp.com/
 
 As Visitor I want to leave feedback
   When I open New Feedback page
