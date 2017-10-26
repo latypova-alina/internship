@@ -6,14 +6,18 @@ class FeedbacksController < ApplicationController
   expose_decorated :feedbacks, -> { Feedback.all }
 
   def create
-    feedback.save
-    flash[:notice] = "Feedback was successfully sent!"
-    redirect_to root_url
-    FeedbackMailer.feedback_email.deliver_later
+    if feedback.save
+      current_user.feedbacks << feedback
+      flash[:notice] = "Feedback was successfully sent!"
+      FeedbackMailer.feedback_email.deliver_later
+    else
+      flash[:alert] = "Check the fields!"
+    end
+    redirect_to new_feedback_path
   end
 
   def feedback_params
-    params.require(:feedback).permit(:name, :email, :text)
+    params.require(:feedback).permit(:name, :email, :text, :user_id)
   end
 
   def index
