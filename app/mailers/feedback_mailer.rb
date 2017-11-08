@@ -1,10 +1,8 @@
 class FeedbackMailer < ApplicationMailer
   default from: "notifications@example.com"
 
-  def feedback_email
-    mail(to: "admin@example.com") do |format|
-      format.text { render plain: "Feedback was successfully sent!" }
-      format.html { render html: "Feedback was successfully sent!".html_safe }
-    end
+  def feedback_email(feedback)
+    @feedback = feedback
+    mail(to: "admin@example.com", subject: "New Feedback")
   end
 end
