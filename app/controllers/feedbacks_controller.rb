@@ -7,9 +7,9 @@ class FeedbacksController < ApplicationController
 
   def create
     if feedback.save
-      current_user.feedbacks << feedback
+      current_user.feedbacks << feedback if current_user
       flash[:notice] = "Feedback was successfully sent!"
-      FeedbackMailer.feedback_email.deliver_later
+      FeedbackMailer.feedback_email(feedback).deliver_later
     else
       flash[:alert] = "Check the fields!"
     end
