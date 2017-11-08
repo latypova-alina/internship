@@ -67,6 +67,8 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Enable Email delivery via custom SMTP server or via SendGrid by default
+  config.action_mailer.default_url_options = { host: "fs-internship.herokuapp.com" }
+
   if ENV["SMTP_USERNAME"] || ENV["SENDGRID_USERNAME"]
     config.action_mailer.delivery_method = :smtp
 
@@ -103,5 +105,5 @@ Rails.application.configure do
   end
 
   # Do not dump schema after migrations.
-  config.active_record.dump_schema_after_migration = false
+  config.active_record.dump_schema_after_migration = true
 end
